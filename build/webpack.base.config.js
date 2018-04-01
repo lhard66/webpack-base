@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -24,6 +25,10 @@ const baseWebpackConfig = {
   },
   plugins: [
     new ExtractTextPlugin('main.css'),
+    // 定义项目环境，开发环境或生产环境
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
   ],
 }
 
