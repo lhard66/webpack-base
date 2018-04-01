@@ -14,6 +14,18 @@ const baseWebpackConfig = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            css: ExtractTextPlugin.extract({
+              use: 'css-loader',
+              fallback: 'vue-style-loader',
+            }),
+          },
+        },
+      },
+      {
         test: /\.css$/,
         // use: ['style-loader', 'css-loader'],
         use: ExtractTextPlugin.extract({
@@ -27,7 +39,8 @@ const baseWebpackConfig = {
     new ExtractTextPlugin('main.css'),
     // 定义项目环境，开发环境或生产环境
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
+      // 'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   ],
 }
