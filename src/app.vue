@@ -22,14 +22,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .success {
   color: green;
 }
-.fail {
-  color: red;
-}
-.msg {
-  cursor: pointer;
+.app-content {
+  .fail {
+    color: red;
+  }
+  .msg {
+    cursor: pointer;
+  }
 }
 </style>

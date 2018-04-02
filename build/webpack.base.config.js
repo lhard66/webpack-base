@@ -19,9 +19,29 @@ const baseWebpackConfig = {
         options: {
           loaders: {
             css: ExtractTextPlugin.extract({
-              use: 'css-loader',
+              use: ['css-loader', 'less-loader'],
               fallback: 'vue-style-loader',
             }),
+            less: ExtractTextPlugin.extract({
+              use: ['css-loader', 'less-loader'],
+              fallback: 'vue-style-loader',
+            }),
+            // 不需要提取css的写法
+            // less: [
+            //   'vue-style-loader',
+            //   {
+            //     loader: 'css-loader',
+            //     options: {
+            //         sourceMap: true,
+            //     },
+            //   },
+            //   {
+            //     loader: 'less-loader',
+            //     options: {
+            //         sourceMap: true,
+            //     },
+            //   },
+            // ],
           },
         },
       },

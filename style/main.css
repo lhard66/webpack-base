@@ -4,8 +4,9 @@
 
 p {
   font-weight: bold;
-  .warning {
-    color: red;
-    font-size: 28px;
-  }
+}
+
+.warning {
+  color: red;
+  font-size: 28px;
 }
