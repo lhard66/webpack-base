@@ -16,6 +16,8 @@
   "devDependencies": {
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^2.1.2",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
     "style-loader": "^0.20.2",
     "vue-loader": "^14.2.2",
     "vue-style-loader": "^4.1.0",

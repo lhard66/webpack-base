@@ -1,3 +1,11 @@
 #num {
   text-decoration: underline;
 }
+
+p {
+  font-weight: bold;
+  .warning {
+    color: red;
+    font-size: 28px;
+  }
+}

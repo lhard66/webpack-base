@@ -30,7 +30,7 @@ const baseWebpackConfig = {
         // use: ['style-loader', 'css-loader'],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader'],
+          use: ['css-loader', 'less-loader'],
         }),
       },
     ]
