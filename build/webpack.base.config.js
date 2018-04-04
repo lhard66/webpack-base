@@ -2,17 +2,31 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
+}
+
 const baseWebpackConfig = {
   entry: {
     'main': './src/main.js',
   },
   output: {
-    path: path.join(__dirname, '../dist'), // 要求为绝对路径
+    path: resolve('dist'), // 要求为绝对路径
     publicPath: '/dist/', // 对于按需加载(on-demand-load)或加载外部资源(external resources)（如图片、文件等）来说，output.publicPath 是很重要的选项。如果指定了一个错误的值，则在加载这些资源时会收到 404 错误。
     filename: 'main.js', // 每个输出 bundle 的名称。如：filename: "[name].[hash].bundle.js"
   },
   module: {
     rules: [
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve('src')],
+        options: {
+          formatter: require('eslint-friendly-formatter'),
+          emitWarning: true,
+        },
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
