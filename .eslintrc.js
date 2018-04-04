@@ -5,6 +5,8 @@ module.exports = {
   },
   env: {
     browser: true,
+    // es6: true,
+    // commonJS: true,
   },
   extends: [
     'plugin:vue/essential',
