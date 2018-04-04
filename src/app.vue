@@ -4,6 +4,8 @@
     <span class="fail">fail</span>
     <p class="msg" @click="showMsg">{{msg}}</p>
     <p>这是一个段落<span class="warning">警告信息</span></p>
+    <p>babel配置完成0000000000</p>
+    <p>fail....</p>
   </div>
 </template>
 
@@ -14,9 +16,15 @@ export default {
       msg: 'hello vue!',
     }
   },
+  mounted() {
+    this.showMsg();
+  },
   methods: {
     showMsg() {
-      alert(this.msg);
+      // alert(this.msg);
+      let abc = 'allen liu';
+      let end = abc.endsWith('iu');
+      console.log(end);
     },
   },
 }
